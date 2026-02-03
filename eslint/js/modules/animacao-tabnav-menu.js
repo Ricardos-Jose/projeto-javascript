@@ -22,8 +22,8 @@ export default class TabNav {
 
   init() {
     if (this.tabMenu.length && this.tabContent.length) {
-      this.tabContent[0].classList.add('ativo');
       this.initEvent();
+      this.ativeTab(0);
     }
   }
 }
