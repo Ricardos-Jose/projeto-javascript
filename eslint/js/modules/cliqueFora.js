@@ -1,21 +1,30 @@
-function outsideClick(elements, events, callback) {
-  const html = document.documentElement;
-  const outside = 'data-outside';
-
-  if (!elements.hasAttribute(outside)) {
-    events.forEach((userEvent) => {
-      setTimeout(() => html.addEventListener(userEvent, handleOutsideClick));
-    });
-    elements.setAttribute(outside, '');
+export default class outsideClick {
+  constructor(elements, events, callback) {
+    this.html = document.documentElement;
+    this.outside = 'data-outside';
   }
-  function handleOutsideClick(event) {
-    if (!elements.contains(event.target)) {
-      elements.removeAttribute(outside);
-      events.forEach((userEvent) => {
+  validacao() {
+    if (!this.elements.hasAttribute(this.outside)) {
+      this.events.forEach((userEvent) => {
+        setTimeout(() =>
+          html.addEventListener(userEvent, () => this.handleOutsideClick),
+        );
+      });
+      this.elements.setAttribute(this.outside, '');
+    }
+  }
+
+  handleOutsideClick(event) {
+    if (!this.elements.contains(event.target)) {
+      this.elements.removeAttribute(outside);
+      this.events.forEach((userEvent) => {
         html.removeEventListener(userEvent, handleOutsideClick);
       });
       callback();
     }
   }
+  initOutside() {
+    this.handleOutsideClick();
+    return this;
+  }
 }
-export default outsideClick;
