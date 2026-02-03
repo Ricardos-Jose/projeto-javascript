@@ -1,9 +1,15 @@
-function initScrollSuave() {
-  const linkInterno = document.querySelectorAll(
-    '[data-menu="suave"] a[href^="#"]',
-  );
+export default class ScrollSuave {
+  constructor(links, options) {
+    this.linkInterno = document.querySelectorAll(links);
+    if (options === undefined) {
+      this.options = { behavior: 'smooth', block: 'start' };
+    } else {
+      this.options = options;
+    }
+    this.scrollSection = this.scrollSection.bind(this);
+  }
 
-  function scrollSection(e) {
+  scrollSection(e) {
     e.preventDefault();
     const href = e.currentTarget.getAttribute('href');
     const section = document.querySelector(href);
@@ -12,16 +18,17 @@ function initScrollSuave() {
       block: 'start',
     });
   }
-  // 1 maneira, calcula o topo do elemento
-  //   const topo = section.offsetTop;
-  //   window.scrollTo({
-  //     top: topo,
-  //     behavior: 'smooth',
-  //   });
-  // }
 
-  linkInterno.forEach((link) => {
-    link.addEventListener('click', scrollSection);
-  });
+  addLinkEvent() {
+    this.linkInterno.forEach((link) => {
+      link.addEventListener('click', scrollSection);
+    });
+  }
+
+  init() {
+    if (this.linkInterno.length) {
+      this.addLinkEvent();
+      return this;
+    }
+  }
 }
-export default initScrollSuave;
