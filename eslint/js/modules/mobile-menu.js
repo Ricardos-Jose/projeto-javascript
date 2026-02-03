@@ -1,6 +1,5 @@
 import outsideClick from './cliqueFora.js';
-
-export default function initMobile() {
+function initMobile() {
   const eventos = ['touchstart', 'click'];
   const menuButton = document.querySelector('[data-menu="button"]');
   const menuList = document.querySelector('[data-menu="list"]');
@@ -16,3 +15,5 @@ export default function initMobile() {
     menuButton.addEventListener(evento, openMenu);
   });
 }
+
+export default initMobile;

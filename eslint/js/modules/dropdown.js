@@ -1,6 +1,6 @@
 import outsideClick from './cliqueFora.js';
 
-export default function initDropDown() {
+function initDropDown() {
   const dropdownMenus = document.querySelectorAll('[data-dropdown]');
 
   dropdownMenus.forEach((menu) => {
@@ -17,3 +17,4 @@ export default function initDropDown() {
     });
   }
 }
+export default initDropDown;

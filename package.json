@@ -1,0 +1,26 @@
+{
+  "name": "refatoracao",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/Ricardos-Jose/projeto-javascript#readme",
+  "bugs": {
+    "url": "https://github.com/Ricardos-Jose/projeto-javascript/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ricardos-Jose/projeto-javascript.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "./main.js",
+  "scripts": {
+    "dev": "webpack --mode development --watch --entry ./eslint/js/script.js -o ./",
+    "build": "webpack --mode production --entry ./eslint/js/script.js -o ./"
+  },
+  "devDependencies": {
+    "eslint": "^9.39.2",
+    "webpack": "^5.104.1",
+    "webpack-cli": "^6.0.1"
+  }
+}

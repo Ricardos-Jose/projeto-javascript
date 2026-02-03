@@ -1,6 +1,6 @@
-export default function initScrollSuave() {
+function initScrollSuave() {
   const linkInterno = document.querySelectorAll(
-    '[data-menu="suave"] a[href^="#"]'
+    '[data-menu="suave"] a[href^="#"]',
   );
 
   function scrollSection(e) {
@@ -24,3 +24,4 @@ export default function initScrollSuave() {
     link.addEventListener('click', scrollSection);
   });
 }
+export default initScrollSuave;

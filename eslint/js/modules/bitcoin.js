@@ -1,4 +1,4 @@
-export default async function initBitcoin() {
+async function initBitcoin() {
   try {
     const bitCoin = await fetch('https://blockchain.info/ticker');
     const json = await bitCoin.json();
@@ -6,3 +6,4 @@ export default async function initBitcoin() {
     btcPreco.innerText = json.BRL.buy.toFixed(4);
   } catch (erro) {}
 }
+export default initBitcoin;

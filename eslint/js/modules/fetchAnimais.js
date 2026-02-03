@@ -1,6 +1,6 @@
 import initNumeros from './numeros.js';
 
-export default function initFetchAnimais() {
+function initFetchAnimais() {
   async function fetchApi(url) {
     try {
       const divGrid = document.querySelector('.numeros-grid');
@@ -24,3 +24,5 @@ export default function initFetchAnimais() {
 
   fetchApi('./animaisapi.json');
 }
+
+export default initFetchAnimais;

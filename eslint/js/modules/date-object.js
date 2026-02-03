@@ -1,4 +1,4 @@
-export default function initDate() {}
+function initDate() {}
 const funcionamento = document.querySelector('[data-semana]');
 const funcionamentoDias = funcionamento.dataset.semana.split(',').map(Number);
 const funcionamentoHora = funcionamento.dataset.horario.split(',').map(Number);
@@ -16,3 +16,4 @@ if (diaAberta && horarioAberto) {
 } else {
   funcionamento.classList.remove('aberto');
 }
+export default initDate;

@@ -1,4 +1,4 @@
-export default function initNumeros() {
+function initNumeros() {
   const numerosTodos = document.querySelectorAll('[data-numero]');
 
   function animaNumeros() {
@@ -7,7 +7,7 @@ export default function initNumeros() {
       const incremento = Math.floor(total / 100);
       let start = 0;
       const timer = setInterval(() => {
-        start = start + incremento;
+        start += incremento;
         numero.innerText = start;
         if (start > total) {
           numero.innerText = total;
@@ -28,3 +28,5 @@ export default function initNumeros() {
   const observer = new MutationObserver(handleMutation);
   observer.observe(observerTarget, { attributes: true });
 }
+
+export default initNumeros;
