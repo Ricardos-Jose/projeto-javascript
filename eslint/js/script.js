@@ -3,14 +3,13 @@ import initScrollSite from './modules/animacao-scroll.js';
 import Accordion from './modules/accordion.js';
 import TabNav from './modules/animacao-tabnav-menu.js';
 import Modal from './modules/modal.js';
-import initTooltip from './modules/tooltip.js';
+import Tooltip from './modules/tooltip.js';
 import initDropDown from './modules/dropdown.js';
 import initMobile from './modules/mobile-menu.js';
 import initDate from './modules/date-object.js';
 import initFetch from './modules/fetchAnimais.js';
 import initBitcoin from './modules/bitcoin.js';
 initScrollSite();
-initTooltip();
 initDropDown();
 initMobile();
 initDate();
@@ -32,11 +31,7 @@ const modal = new Modal(
   '[data-modal="container"]',
 );
 modal.initModal();
-// [data-modal="abrir"]');
-
-// [data-modal="fechar"]');
-
-// '
-
+const tooltip = new Tooltip('[data-tooltip]');
+tooltip.init();
 tabNav.init();
 console.log('chao');
