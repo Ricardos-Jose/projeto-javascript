@@ -10,8 +10,8 @@ export default class Accordion {
   }
 
   toggleAccordion(item) {
-    item.classList.toggle(activeClass);
-    item.nextElementSibling.classList.toggle(activeClass);
+    item.classList.toggle(this.activeClass);
+    item.nextElementSibling.classList.toggle(this.activeClass);
   }
   initAccordion() {
     if (this.accordionList.length) {

@@ -21,7 +21,7 @@ export default class ScrollSuave {
 
   addLinkEvent() {
     this.linkInterno.forEach((link) => {
-      link.addEventListener('click', scrollSection);
+      link.addEventListener('click', this.scrollSection);
     });
   }
 
