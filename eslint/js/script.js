@@ -8,12 +8,12 @@ import initDropDown from './modules/dropdown.js';
 import initMobile from './modules/mobile-menu.js';
 import initDate from './modules/date-object.js';
 import fetchApi from './modules/fetchAnimais.js';
-import initBitcoin from './modules/bitcoin.js';
+import Bitcoin from './modules/bitcoin.js';
 initScrollSite();
 initDropDown();
 initMobile();
 initDate();
-initBitcoin();
+Bitcoin('https://blockchain.info/ticker', '.btc-preco');
 fetchApi('./animaisapi.json', '.numeros-grid');
 
 // const dropDown = new DropDown('[data-dropdown]');
