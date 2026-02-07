@@ -9,8 +9,8 @@ import Mobile from './modules/mobile-menu.js';
 import initDate from './modules/date-object.js';
 import fetchApi from './modules/fetchAnimais.js';
 import Bitcoin from './modules/bitcoin.js';
+import Funcionamento from './modules/date-object.js';
 
-initDate();
 Bitcoin('https://blockchain.info/ticker', '.btc-preco');
 fetchApi('./animaisapi.json', '.numeros-grid');
 
@@ -44,3 +44,6 @@ scrollAnima.init();
 const eventos = ['touchstart', 'click'];
 const menu = new Mobile('[data-menu="button"]', '[data-menu="list"]');
 menu.init();
+
+const funcionamento = new Funcionamento('[data-semana]');
+funcionamento.init();
