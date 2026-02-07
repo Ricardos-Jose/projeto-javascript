@@ -5,12 +5,11 @@ import TabNav from './modules/animacao-tabnav-menu.js';
 import Modal from './modules/modal.js';
 import Tooltip from './modules/tooltip.js';
 import DropDown from './modules/dropdown.js';
-import initMobile from './modules/mobile-menu.js';
+import Mobile from './modules/mobile-menu.js';
 import initDate from './modules/date-object.js';
 import fetchApi from './modules/fetchAnimais.js';
 import Bitcoin from './modules/bitcoin.js';
 
-initMobile();
 initDate();
 Bitcoin('https://blockchain.info/ticker', '.btc-preco');
 fetchApi('./animaisapi.json', '.numeros-grid');
@@ -40,3 +39,8 @@ tabNav.init();
 
 const scrollAnima = new ScrollAnima('[data-anime="scroll"]');
 scrollAnima.init();
+
+// menu mobile
+const eventos = ['touchstart', 'click'];
+const menu = new Mobile('[data-menu="button"]', '[data-menu="list"]');
+menu.init();
