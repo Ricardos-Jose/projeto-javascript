@@ -6,13 +6,18 @@ import Modal from './modules/modal.js';
 import Tooltip from './modules/tooltip.js';
 import DropDown from './modules/dropdown.js';
 import Mobile from './modules/mobile-menu.js';
-import initDate from './modules/date-object.js';
 import fetchApi from './modules/fetchAnimais.js';
 import Bitcoin from './modules/bitcoin.js';
 import Funcionamento from './modules/date-object.js';
+import { SlideNav } from './modules/slide.js';
 
 Bitcoin('https://blockchain.info/ticker', '.btc-preco');
 fetchApi('./animaisapi.json', '.numeros-grid');
+
+const slide = new SlideNav('.slide', '.holder');
+slide.init();
+
+slide.addControl('.custom-control');
 
 const dropDown = new DropDown('[data-dropdown]');
 dropDown.init();
